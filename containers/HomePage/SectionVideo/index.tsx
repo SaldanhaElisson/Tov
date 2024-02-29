@@ -1,15 +1,25 @@
 'use client';
 
+import { ControlsButton } from '@/components/Buttons/ControlsButtons';
 import UseTools from '@/store/useTools';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+
+import iconPlay from '@/public/play_arrow.svg';
+
+import iconPause from '@/public/icon _pause.svg';
+import { WhiteboardCanvas2 } from '../Canvas/components2';
 
 export const SectionVideo = () => {
   const mousePatter = UseTools((state) => state.mousePatter);
   const pencil = UseTools((state) => state.pencil);
 
+  const [paused, setPaused] = useState<Boolean>(false);
+
   const [x, setX] = useState<Number>(0);
   const [y, setY] = useState<Number>(0);
   const [timeCurrent, setTimeCurrent] = useState<Number>(0);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   function getCord(event: React.MouseEvent<HTMLVideoElement, MouseEvent>) {
     changeCourse();
@@ -40,22 +50,45 @@ export const SectionVideo = () => {
     }
   }
 
+  function controlsCustoom() {
+    setPaused((prev) => !prev);
+
+    if (paused) {
+      videoRef.current?.pause();
+    } else {
+      videoRef.current?.play();
+    }
+  }
+
   return (
     <section className='flex h-full w-full items-center justify-center rounded-2xl bg-surfaceWhite'>
-      <div>
+      <div className='relative'>
         <video
-          controls
+          ref={videoRef}
           id='video'
-          width='1000'
+          width='800'
           muted
-          height='600'
+          height='400'
           preload='auto'
           onMouseMove={getCord}
         >
           <source src='video3.mp4' type='video/mp4' />
         </video>
 
-        <div className='mt-9 text-4xl'>{`Tools: ${mousePatter} Time: ${timeCurrent} Y: ${y} X: ${x}`}</div>
+        <WhiteboardCanvas2 />
+
+        <div
+          id='custom-controls'
+          className='mt-7 flex h-full w-full justify-center'
+        >
+          <ControlsButton
+            img={paused ? iconPause : iconPlay}
+            alt='botão de play'
+            onClick={controlsCustoom}
+          />
+        </div>
+
+        {/* <div className='mt-9 text-4xl'>{`Tools: ${mousePatter} Time: ${timeCurrent} Y: ${y} X: ${x}`}</div> */}
       </div>
     </section>
   );

@@ -8,8 +8,11 @@ interface Iprops extends ImgHTMLAttributes<HTMLButtonElement> {
 
 export const ToolsButton: React.FC<Iprops> = ({ img, alt, ...props }) => {
   return (
-    <button className='mb-3 rounded-2xl bg-blueLight p-2' {...props}>
-      <Image src={img} width={56} alt={alt} />
+    <button
+      className='mb-3 select-none rounded-2xl bg-blueLight p-2	'
+      {...props}
+    >
+      <Image src={img} width={56} alt={alt} className='select-none	' />
     </button>
   );
 };
