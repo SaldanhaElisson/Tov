@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Adm Backend
 
-## Getting Started
+- Node v18.17
+- NPM
+- NextJs
+- JWT
+- Prisma
+- MongoDB
 
-First, run the development server:
+### Padrão de issue
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- TOV{id} - {Titulo}
+
+**Obs:** Os titulos devem ser em inglẽs.
+
+### Padrão de branch
+
+- TOV{id}
+
+### Padrão de commit
+
+O projeto utiliza os padrões do **Conventional commmits** , portanto utilizaremos a seguinte estrutura dos commits
+
+```
+!type(?scope): !subject
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Em tipos poderemos ter o seguintes abaixos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `feat` - Commits do tipo feat indicam que seu trecho de código está incluindo um novo recurso (se relaciona com o MINOR do versionamento semântico).
+- `fix` - Commits do tipo fix indicam que seu trecho de código commitado está solucionando um problema (bug fix), (se relaciona com o PATCH do versionamento semântico).
+- `docs` - Commits do tipo docs indicam que houveram mudanças na documentação, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
+- `perf` - Commitsa do tipo perf servem para identificar quaisquer alterações de código que estejam relacionadas a performance.
+- `style` - Commits do tipo style indicam que houveram alterações referentes a formatações de código, semicolons, trailing spaces, lint... (Não inclui alterações em código).
+- `refactor`- Commits do tipo refactor referem-se a mudanças devido a refatorações que não alterem sua funcionalidade, como por exemplo, uma alteração no formato como é processada determinada parte da tela, mas que manteve a mesma funcionalidade, ou melhorias de performance devido a um code review.
+- `enhancement`- Commits do tipo enhancement indicam melhorias de uma feature, isto é, algo a ser acrescentado a um recurso já existente, como por exemplo uma melhoria no layout de um botão.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `chore` - Alterar fora do ambiente de execução - Atualize algo sem impactar o código (ex: atualização leia-me, atualização CI/CD...).
 
-## Learn More
+O _scope_ se refere o id da issue, por exemlpo se há uma issue de DOCQ001 com commit corrigindo o bugfix deve ser escrito seguindo o padrão:
 
-To learn more about Next.js, take a look at the following resources:
+```
+git commit -m "fix(DOCF001): add padding in button on login page"
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_Subject_ se refere uma breve descrição do que foi feito naquele commit, no caso acima seria "add padding in button on login page"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Obs:** Os commits deverão ser em inglês.
