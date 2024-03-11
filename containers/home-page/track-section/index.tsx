@@ -1,8 +1,8 @@
 import React from 'react';
-import { SectionToolsButtons } from '../SectionToolsButtons';
-import { SectionVideo } from '../SectionVideo';
+import { SectionToolsButtons } from '../tools-section';
+import { SectionVideo } from '../video-section';
 
-import { WhiteboardCanvas2 } from '../Canvas/components2';
+import { WhiteboardCanvas2 } from '../canvas-setion/components2';
 
 export const SectionTrack = () => {
   return (

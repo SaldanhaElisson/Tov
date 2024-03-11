@@ -1,5 +1,5 @@
-import { SectionActions } from '@/containers/HomePage/SectionActions';
-import { SectionTrack } from '@/containers/HomePage/SectionTrack';
+import { SectionActions } from '@/containers/home-page/actions-section';
+import { SectionTrack } from '@/containers/home-page/track-section';
 
 export default function Home() {
   return (
