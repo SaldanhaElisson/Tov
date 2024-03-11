@@ -1,5 +1,5 @@
 import { db } from '@/lib/db';
-import { session } from '@/lib/session';
+import { session } from '@/actions/session';
 import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
@@ -22,8 +22,6 @@ export const authOptions: NextAuthOptions = {
       if (!profile?.email) {
         throw new Error('No profile');
       }
-
-      console.log(profile.email);
 
       await db.user.upsert({
         where: {
