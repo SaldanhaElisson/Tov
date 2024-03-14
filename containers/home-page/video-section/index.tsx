@@ -7,7 +7,7 @@ import React, { useRef, useState } from 'react';
 import iconPlay from '@/public/play_arrow.svg';
 
 import iconPause from '@/public/icon _pause.svg';
-import { WhiteboardCanvas2 } from '../Canvas/components2';
+import { WhiteboardCanvas2 } from '../canvas-setion/components2';
 
 export const SectionVideo = () => {
   const mousePatter = UseTools((state) => state.mousePatter);
