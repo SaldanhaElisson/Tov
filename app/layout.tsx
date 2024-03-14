@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/app/global.css';
 import { Roboto } from 'next/font/google';
+import Provider from '@/components/provider';
 
 const roboto = Roboto({
   weight: '400', // Specify the font weight (e.g., '400' for normal)
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body className={`${roboto.className} h-screen bg-bgblack`}>
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

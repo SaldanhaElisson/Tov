@@ -23,19 +23,23 @@ export const authOptions: NextAuthOptions = {
         throw new Error('No profile');
       }
 
-      await db.user.upsert({
-        where: {
-          email: profile.email,
-        },
-        create: {
-          email: profile?.email,
-          name: profile?.name || 'sem nome',
-          avatar: profile?.image || 'sem avatar',
-        },
-        update: {
-          name: profile.name,
-        },
-      });
+      try {
+        await db.user.upsert({
+          where: {
+            email: profile.email,
+          },
+          create: {
+            email: profile?.email,
+            name: profile?.name || 'sem nome',
+            avatar: profile?.image || 'sem avatar',
+          },
+          update: {
+            name: profile.name,
+          },
+        });
+      } catch (e) {
+        console.log(e);
+      }
 
       return true;
     },
