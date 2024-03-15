@@ -22,6 +22,7 @@ export const SectionVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   function getCord(event: React.MouseEvent<HTMLVideoElement, MouseEvent>) {
+    console.log('aa');
     changeCourse();
 
     const video = document.getElementById('video') as HTMLVideoElement;
@@ -42,6 +43,8 @@ export const SectionVideo = () => {
 
   function changeCourse() {
     const elementToChange = document.getElementById('video');
+
+    console.log(pencil);
 
     if (elementToChange && pencil) {
       elementToChange.style.cursor = "url('pencil.svg'), auto";
@@ -66,7 +69,7 @@ export const SectionVideo = () => {
         <video
           ref={videoRef}
           id='video'
-          width='800'
+          width='600'
           muted
           height='400'
           preload='auto'
@@ -75,7 +78,7 @@ export const SectionVideo = () => {
           <source src='video3.mp4' type='video/mp4' />
         </video>
 
-        <WhiteboardCanvas2 />
+        {/* <WhiteboardCanvas2 /> */}
 
         <div
           id='custom-controls'
@@ -88,7 +91,7 @@ export const SectionVideo = () => {
           />
         </div>
 
-        {/* <div className='mt-9 text-4xl'>{`Tools: ${mousePatter} Time: ${timeCurrent} Y: ${y} X: ${x}`}</div> */}
+        <div className='mt-9 text-xl'>{`Tools: ${mousePatter} Time: ${timeCurrent} Y: ${y} X: ${x}`}</div>
       </div>
     </section>
   );

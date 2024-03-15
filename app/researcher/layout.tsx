@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className=' h-screen items-center justify-between px-7 pb-16 pt-4 '>
+    <main className=' h-screen items-center justify-between bg-bgblack px-7 pb-16 pt-4'>
       <Logo />
       {children}
     </main>

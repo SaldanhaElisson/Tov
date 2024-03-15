@@ -1,19 +1,20 @@
-import { IprofileProps } from '@/types';
 import { create } from 'zustand';
 
-type State = IprofileProps;
-
-type Action = {
-  updateProfile: (
-    name: IprofileProps['name'],
-    avatar: IprofileProps['avatar']
-  ) => void;
+type State = {
+  pencil: boolean;
+  mousePatter: boolean;
 };
 
-const useStores = create<State & Action>((set) => ({
-  name: '',
-  avatar: '',
-  updateProfile: (name, avatar) => set(() => ({ name: name, avatar: avatar })),
+type Action = {
+  updateGetCord: () => void;
+  updateMousePatter: () => void;
+};
+
+const UseTools = create<State & Action>((set) => ({
+  pencil: false,
+  mousePatter: true,
+  updateGetCord: () => set(() => ({ pencil: true, mousePatter: false })),
+  updateMousePatter: () => set(() => ({ pencil: false, mousePatter: true })),
 }));
 
-export default useStores;
+export default UseTools;

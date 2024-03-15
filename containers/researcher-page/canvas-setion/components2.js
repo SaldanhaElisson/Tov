@@ -48,6 +48,7 @@ export const WhiteboardCanvas2 = () => {
   return (
     <div className='absolute top-0'>
       <canvas
+        id='canvas'
         ref={canvasRef}
         onMouseDown={startDrawing}
         onMouseMove={drawing}
