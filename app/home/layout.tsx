@@ -1,4 +1,4 @@
-import { Logo } from '@/components/Logo';
+import { VerticalNavBar } from '@/containers/home-page/vertical-navbar-section';
 
 export default function RootLayout({
   children,
@@ -6,8 +6,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className=' h-screen items-center justify-between px-7 pb-16 pt-4 '>
-      <Logo />
+    <main id='home-page' className='flex h-screen w-screen'>
+      <VerticalNavBar />
+
       {children}
     </main>
   );

@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 
 export const GoogleSection = () => {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/profile';
+  const callbackUrl = searchParams.get('callbackUrl') || '/home';
 
   const handleLogin = async () => {
     try {

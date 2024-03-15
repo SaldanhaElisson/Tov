@@ -1,14 +1,15 @@
-'use client';
-
 import { getUserSession } from '@/actions/session';
-import { SectionActions } from '@/containers/home-page/actions-section';
-import { SectionTrack } from '@/containers/home-page/track-section';
+import { ProfileSection } from '@/containers/home-page/profile-section';
 
-export default function Home() {
+export default async function Home() {
+  const user = await getUserSession();
+
+  const name = user.name;
+  const avatar = user.image;
+
   return (
-    <section id='home-section' className='flex h-[90%] gap-6'>
-      <SectionTrack />
-      <SectionActions />
+    <section className='h-full w-full'>
+      <ProfileSection name={name} avatar={avatar} />
     </section>
   );
 }

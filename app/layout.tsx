@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br'>
-      <body className={`${roboto.className} h-screen bg-bgblack`}>
+      <body className={`${roboto.className} h-screen `}>
         <Provider>{children}</Provider>
       </body>
     </html>
