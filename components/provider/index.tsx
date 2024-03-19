@@ -3,12 +3,19 @@
 import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
 
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+
 interface ProviderProps {
   children: ReactNode;
 }
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
-  return <SessionProvider> {children}</SessionProvider>;
+  return (
+    <Theme>
+      <SessionProvider> {children}</SessionProvider>{' '}
+    </Theme>
+  );
 };
 
 export default Provider;

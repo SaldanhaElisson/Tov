@@ -38,6 +38,7 @@ export const authOptions: NextAuthOptions = {
           },
         });
       } catch (e) {
+        console.log(e);
         throw new Error('Erro no servidor');
       }
 

@@ -1,5 +1,6 @@
 import { getUserSession } from '@/actions/session';
 import { ProfileSection } from '@/containers/home-page/profile-section';
+import { TableSection } from '@/containers/home-page/table-section';
 
 export default async function Home() {
   const user = await getUserSession();
@@ -8,8 +9,10 @@ export default async function Home() {
   const avatar = user.image;
 
   return (
-    <section className='h-full w-full'>
+    <section className=' w-full'>
       <ProfileSection name={name} avatar={avatar} />
+
+      <TableSection />
     </section>
   );
 }
