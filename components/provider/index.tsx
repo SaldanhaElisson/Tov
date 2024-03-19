@@ -12,7 +12,7 @@ interface ProviderProps {
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
   return (
-    <Theme>
+    <Theme accentColor='cyan' radius='full'>
       <SessionProvider> {children}</SessionProvider>{' '}
     </Theme>
   );
